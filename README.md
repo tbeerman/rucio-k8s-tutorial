@@ -41,3 +41,16 @@
           {"version": "1.21.10"}
         > curl http://rucio-auth.info/ping
           {"version": "1.21.10"}
+
+* check if clients are working:
+
+         > docker run -v `pwd`/rucio.cfg:/opt/rucio/etc/rucio.cfg -v /etc/hosts:/etc/hosts -it --rm --name=rucio-client rucio/rucio-clients:release-1.21.10
+         > bash-4.2# rucio whoami
+            status     : ACTIVE
+            account    : root
+            account_type : SERVICE
+            created_at : 2020-03-02T14:21:06
+            updated_at : 2020-03-02T14:21:06
+            suspended_at : None
+            deleted_at : None
+            email      : None
