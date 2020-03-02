@@ -1,0 +1,16 @@
+ apiVersion: v1
+ kind: Pod
+ metadata:
+   name: init
+   labels:
+     app: rucio
+ spec:
+   restartPolicy: Never
+   containers:
+     - name: init
+       image: beermann/rucio-init:release-1.21.10
+       env:
+         - name: RUCIO_CFG_DATABASE_DEFAULT
+           value: postgresql://rucio:secret@postgres-postgresql/rucio
+         - name: RUCIO_CFG_DATABASE_SCHEMA
+           value: test
