@@ -55,3 +55,7 @@
             suspended_at : None
             deleted_at : None
             email      : None
+
+* install xrootd containers:
+
+            > kubectl apply -f xrd.yaml
