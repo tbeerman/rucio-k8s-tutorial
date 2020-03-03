@@ -45,7 +45,7 @@
 
 * check if clients are working:
 
-         > docker run -v `pwd`/rucio.cfg:/opt/rucio/etc/rucio.cfg -v /etc/hosts:/etc/hosts -it --rm --name=rucio-client rucio/rucio-clients:release-1.21.10
+         > kubectl run clients -i --tty --image=rucio/rucio-clients:release-1.21.10 --restart=Never --env="RUCIO_CFG_RUCIO_HOST=http://server-rucio-server" --env="RUCIO_CFG_AUTH_HOST=http://server-rucio-server-auth" --env="RUCIO_CFG_AUTH_TYPE=userpass" --env="RUCIO_CFG_USERNAME=ddmlab" --env="RUCIO_CFG_PASSWORD=secret" --env="RUCIO_CFG_ACCOUNT=root" --rm -- /bin/bash
          > bash-4.2# rucio whoami
             status     : ACTIVE
             account    : root
