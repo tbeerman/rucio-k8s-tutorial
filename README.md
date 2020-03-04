@@ -59,3 +59,13 @@
 * install xrootd containers:
 
             > kubectl apply -f xrd.yaml
+       
+* install fts:
+
+            > kubectl apply -f ftsdb.yaml
+            > kubectl apply -f fts.yaml
+
+* install the daemons and run fts delegation once:
+
+            > helm install daemons rucio/rucio-daemons -f daemons.yaml
+            > kubectl create job renew-manual-1 --from=cronjob/daemons-renew-fts-proxy
