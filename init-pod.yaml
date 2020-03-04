@@ -9,6 +9,7 @@
    containers:
      - name: init
        image: beermann/rucio-init:release-1.21.10
+       imagePullPolicy: Always
        env:
          - name: RUCIO_CFG_DATABASE_DEFAULT
            value: postgresql://rucio:secret@postgres-postgresql/rucio

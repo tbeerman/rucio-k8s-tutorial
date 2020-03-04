@@ -1,0 +1,66 @@
+abacusAccountCount: 0
+abacusRseCount: 0
+conveyorTransferSubmitterCount: 0
+conveyorPollerCount: 0
+conveyorFinisherCount: 0
+hermesCount: 0
+judgeCleanerCount: 0
+judgeEvaluatorCount: 0
+judgeInjectorCount: 0
+judgeRepairerCount: 0
+undertakerCount: 0
+reaper2Count: 0
+
+conveyorTransferSubmitter:
+  threads: 1
+  activities: "'Functional Test XrootD' 'Functional Test WebDAV' 'Express'"
+  sleepTime: 10
+
+reaper:
+  workers: 60
+  threadsPerWorker: 1
+  greedy: 1
+
+image:
+  tag: release-1.21.10
+  pullPolicy: Always
+
+ftsRenewal:
+  enabled: 1
+  image:
+    repository: rucio/fts-cron
+    tag: latest
+  vo: "tutorial"
+  voms: "tutorial"
+  servers: "https://fts:8446"
+
+config:
+  database:
+    default: postgresql://rucio:secret@postgres-postgresql/rucio
+    schema: test
+
+  messaging_hermes:
+    username: "hermes"
+    password: "supersecret"
+    nonssl_port: "61613"
+    use_ssl: "False"
+    destination: "/queue/events"
+    brokers: "activemq"
+
+  conveyor:
+    scheme: "gsiftp,root,http,https"
+    transfertool: "fts3"
+    ftshosts: "https://fts:8446"
+    cacert: "/opt/certs/ca.pem"
+    usercert: "/opt/proxy/x509up"
+
+  policy:
+    permission: "generic"
+    schema: "generic"
+    lfn2pfn_algorithm_default: "identity"
+
+  monitor:
+    carbon_server: "rucio-graphite-prod.cern.ch"
+    carbon_port: "8125"
+    user_scope: "rucio-doma"
+
