@@ -38,10 +38,10 @@ spec:
       image: rucio/xrootd
       env:
         - name: XRDPORT
-          value: "1194"
+          value: "1094"
       ports:
         - name: xrd1
-          containerPort: 1194
+          containerPort: 1094
           protocol: TCP
       volumeMounts:
         - name: hostcert
@@ -72,8 +72,8 @@ metadata:
     app: xrd1
 spec:
   ports:
-    - port: 1194
-      targetPort: 1194
+    - port: 1094
+      targetPort: 1094
       protocol: TCP
       name: xrd1
 
@@ -93,10 +93,10 @@ spec:
       image: rucio/xrootd
       env:
         - name: XRDPORT
-          value: "1194"
+          value: "1094"
       ports:
         - name: xrd2
-          containerPort: 1194
+          containerPort: 1094
           protocol: TCP
       volumeMounts:
         - name: hostcert
@@ -127,8 +127,8 @@ metadata:
     app: xrd2
 spec:
   ports:
-    - port: 1194
-      targetPort: 1194
+    - port: 1094
+      targetPort: 1094
       protocol: TCP
       name: xrd2
 
@@ -148,10 +148,10 @@ spec:
       image: rucio/xrootd
       env:
         - name: XRDPORT
-          value: "1194"
+          value: "1094"
       ports:
         - name: xrd3
-          containerPort: 1194
+          containerPort: 1094
           protocol: TCP
       volumeMounts:
         - name: hostcert
@@ -182,8 +182,8 @@ metadata:
     app: xrd3
 spec:
   ports:
-    - port: 1194
-      targetPort: 1194
+    - port: 1094
+      targetPort: 1094
       protocol: TCP
       name: xrd3
 
