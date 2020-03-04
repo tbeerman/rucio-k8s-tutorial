@@ -3,7 +3,7 @@
 * clone this repo to your local machine
 * install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-macos
 * install helm: https://helm.sh/docs/intro/install/
-* install minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
+* install minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/ / https://minikube.sigs.k8s.io/docs/start/
 * add repos:
 
       > helm repo add stable https://kubernetes-charts.storage.googleapis.com/
