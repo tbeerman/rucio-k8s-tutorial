@@ -11,20 +11,20 @@ spec:
     image: rucio/rucio-clients:release-1.21.10
     volumeMounts:
     - name: usercert
-      mountPath: /opt/rucio/etc/usercert.pem
+      mountPath: /tmp/usercert.pem
       subPath: usercert.pem
     - name: userkey
-      mountPath: /opt/rucio/etc/userkey.pem
+      mountPath: /tmp/userkey.pem
       subPath: userkey.pem
     - name: x509up
-      mountPath: /opt/rucio/etc/x509up
+      mountPath: /tmp/x509up
       subPath: x509up
       readOnly: False
     - name: ca
       mountPath: /etc/grid-security/certificates/5fca1cb1.0
       subPath: ca.pem
     command: ["/bin/sh"]
-    args: ["-c", "while true; do echo hello; sleep 3;done"]
+    args: ["-c", "mkdir -p /opt/rucio/etc; cp /tmp/usercert.pem /opt/rucio/etc/usercert.pem; cp /tmp/userkey.pem /opt/rucio/etc/userkey.pem; cp /tmp/x509up /opt/rucio/etc/x509up; while true; do echo hello; sleep 3;done"]
     env:
     - name: RUCIO_CFG_RUCIO_HOST
       value: http://server-rucio-server
@@ -40,16 +40,18 @@ spec:
       value: root
     - name: RUCIO_CFG_CLIENT_CERT
       value: /opt/rucio/etc/usercert.pem
+    - name: RUCIO_CFG_CA_CERT
+      value: /etc/grid-security/certificates/5fca1cb1.0
     - name: RUCIO_CFG_CLIENT_KEY
       value: /opt/rucio/etc/userkey.pem
     - name: RUCIO_CFG_CLIENT_X509_PROXY
-      value: /opt/rucio/etc/x509up
+      value: $X509_USER_PROXY
     - name: X509_USER_CERT
       value: /opt/rucio/etc/usercert.pem
     - name: X509_USER_KEY
       value: /opt/rucio/etc/userkey.pem
-    - name: X509_USER_PROXY
-      value: /opt/rucio/etc/x509up
+    #- name: X509_USER_PROXY
+    #  value: /opt/rucio/etc/x509up
   volumes:
   - name: usercert
     secret:
@@ -64,6 +66,6 @@ spec:
   - name: ca
     secret:
       secretName: daemons-rucio-ca-bundle
-      defaultMode: 0400
+      defaultMode: 0644
      
 
