@@ -2,18 +2,18 @@
 
 * Clone this repo to your local machine
 
-* Install `kubectl`
+* Install kubectl
 
       https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
-* Install `helm`
+* Install helm
 
       https://helm.sh/docs/intro/install/
 
-* Install `minikube`
+* Install minikube
 
-      1. https://kubernetes.io/docs/tasks/tools/install-minikube/
-	  2. https://minikube.sigs.k8s.io/docs/start/
+      https://kubernetes.io/docs/tasks/tools/install-minikube/
+	  https://minikube.sigs.k8s.io/docs/start/
 
 * Start minikube with extra RAM:
 
