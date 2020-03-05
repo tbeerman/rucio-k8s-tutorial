@@ -45,7 +45,8 @@
 
 * check if clients are working:
 
-         > kubectl run clients -i --tty --image=rucio/rucio-clients:release-1.21.10 --restart=Never --env="RUCIO_CFG_RUCIO_HOST=http://server-rucio-server" --env="RUCIO_CFG_AUTH_HOST=http://server-rucio-server-auth" --env="RUCIO_CFG_AUTH_TYPE=userpass" --env="RUCIO_CFG_USERNAME=ddmlab" --env="RUCIO_CFG_PASSWORD=secret" --env="RUCIO_CFG_ACCOUNT=root" --rm -- /bin/bash
+         > kubectl apply -f client.yaml
+         > kubectl exec -it client /bin/bash
          > bash-4.2# rucio whoami
             status     : ACTIVE
             account    : root
