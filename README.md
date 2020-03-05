@@ -1,9 +1,10 @@
 # Rucio Kubernetes Tutorial
 
 * Clone this repo to your local machine
-* Install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-macos
-* Install helm: https://helm.sh/docs/intro/install/
-* Install minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/ / https://minikube.sigs.k8s.io/docs/start/
+
+* Install `kubectl`: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-macos
+* Install `helm`: https://helm.sh/docs/intro/install/
+* Install `minikube`: https://kubernetes.io/docs/tasks/tools/install-minikube/ / https://minikube.sigs.k8s.io/docs/start/
 
 * Start minikube with extra RAM:
 
@@ -11,7 +12,7 @@
 
 * Add Helm chart repositories:
 
-	> helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+      > helm repo add stable https://kubernetes-charts.storage.googleapis.com/
       > helm repo add rucio https://rucio.github.io/helm-charts
 
 * Install the main Rucio database (PostgreSQL):
