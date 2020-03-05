@@ -1,5 +1,5 @@
-abacusAccountCount: 0
-abacusRseCount: 0
+abacusAccountCount: 1
+abacusRseCount: 1
 conveyorTransferSubmitterCount: 1
 conveyorPollerCount: 1
 conveyorFinisherCount: 1
@@ -8,8 +8,50 @@ judgeCleanerCount: 1
 judgeEvaluatorCount: 1
 judgeInjectorCount: 1
 judgeRepairerCount: 1
-undertakerCount: 0
-reaper2Count: 0
+undertakerCount: 1
+reaper2Count: 1
+
+abacusAccount:
+  threads: 1
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "25m"
+    limits:
+      memory: "256Mi"
+      cpu: "50m"
+
+abacusRse:
+  threads: 1
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "25m"
+    limits:
+      memory: "256Mi"
+      cpu: "50m"
+
+reaper2:
+  greedy: 1
+  threads: 1
+  sleepTime: 60
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "100m"
+
+undertaker:
+  threads: 1
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "25m"
+    limits:
+      memory: "256Mi"
+      cpu: "50m"
 
 conveyorTransferSubmitter:
   threads: 1
