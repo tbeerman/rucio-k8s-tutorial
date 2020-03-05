@@ -135,7 +135,7 @@ reaper:
   greedy: 1
 
 image:
-  tag: release-1.21.10
+  tag: release-1.21.10.post1
   pullPolicy: Always
 
 ftsRenewal:
@@ -161,7 +161,7 @@ config:
     brokers: "activemq"
 
   conveyor:
-    scheme: "gsiftp,root,http,https"
+    scheme: "gsiftp,root,https,davs"
     transfertool: "fts3"
     ftshosts: "https://fts:8446"
     cacert: "/opt/certs/ca.pem"
@@ -176,4 +176,3 @@ config:
     carbon_server: "rucio-graphite-prod.cern.ch"
     carbon_port: "8125"
     user_scope: "rucio-doma"
-
