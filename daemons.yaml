@@ -128,7 +128,7 @@ config:
   policy:
     permission: "generic"
     schema: "generic"
-    lfn2pfn_algorithm_default: "identity"
+    lfn2pfn_algorithm_default: "hash"
 
   monitor:
     carbon_server: "rucio-graphite-prod.cern.ch"
