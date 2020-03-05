@@ -46,6 +46,10 @@
 
       help repo update
 
+* Shut down minikube:
+
+      minikube stop
+
 ## Installation of Rucio + FTS + Storage
 
 * Install the main Rucio database (PostgreSQL):
