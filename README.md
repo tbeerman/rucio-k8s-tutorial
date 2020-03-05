@@ -1,5 +1,7 @@
 # Rucio Kubernetes Tutorial
 
+## Preliminaries
+
 * Clone this repo to your local machine
 
 * Install kubectl
@@ -23,6 +25,8 @@
 
       > helm repo add stable https://kubernetes-charts.storage.googleapis.com/
       > helm repo add rucio https://rucio.github.io/helm-charts
+
+## Installation of Rucio + FTS + Storage
 
 * Install the main Rucio database (PostgreSQL):
 
@@ -73,3 +77,23 @@
 * Run FTS storage authentication delegation once:
 
       > kubectl create job renew-manual-1 --from=cronjob/daemons-renew-fts-proxy
+
+## Some helpful commands
+
+* Activate kubectl bash completion:
+
+      > source <(kubectl completion bash)
+
+* View all containers:
+
+      > kubectl get pods
+
+* View/Tail logfiles of pod:
+
+      > kubectl logs <NAME>
+
+      > kubectl logs -f <NAME>
+
+* Update helm repositories:
+
+      > help repo update
