@@ -158,9 +158,13 @@
       rucio add-container test:container
       rucio attach test:container test:dataset1 test:dataset2
 
-* Create a rule
+* Create a rule and remember returned rule ID
 
       rucio add-rule test:container 1 XRD3
+
+* Query the status of the rule
+
+      rucio rule-info <rule_id>
 
 * Add some more complications
 
