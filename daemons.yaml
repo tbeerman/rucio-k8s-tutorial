@@ -67,6 +67,8 @@ conveyorTransferSubmitter:
 
 conveyorPoller:
   threads: 1
+  sleepTime: 10
+  olderThan: 0
   resources:
     requests:
       memory: "64Mi"
@@ -85,7 +87,6 @@ conveyorFinisher:
       memory: "256Mi"
       cpu: "200m"
 
-
 judgeCleaner:
   threads: 1
   resources:
@@ -95,7 +96,6 @@ judgeCleaner:
     limits:
       memory: "256Mi"
       cpu: "200m"
-
 
 judgeEvaluator:
   threads: 1
