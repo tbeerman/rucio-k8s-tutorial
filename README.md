@@ -44,7 +44,7 @@
 
 * Update helm repositories:
 
-      help repo update
+      helm repo update
 
 * Shut down minikube:
 
