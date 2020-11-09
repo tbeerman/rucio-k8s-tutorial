@@ -5,7 +5,7 @@ traceReplicaCount: 0
 
 image:
   repository: rucio/rucio-server
-  tag: release-1.21.10
+  tag: release-1.23.8_py3
 
 config:
   database:

@@ -31,7 +31,7 @@ metadata:
 spec:
   containers:
   - name: client
-    image: rucio/rucio-clients:release-1.21.10
+    image: rucio/rucio-clients:release-1.23.8_py3
     volumeMounts:
     - name: usercert
       mountPath: /tmp/usercert.pem
@@ -46,8 +46,8 @@ spec:
     - name: ca
       mountPath: /etc/grid-security/certificates/5fca1cb1.0
       subPath: ca.pem
-    command: ["/bin/sh"]
-    args: ["-c", "mkdir -p /opt/rucio/etc; cp /tmp/usercert.pem /opt/rucio/etc/usercert.pem; cp /tmp/userkey.pem /opt/rucio/etc/userkey.pem; cp /tmp/x509up /opt/rucio/etc/x509up; while true; do echo hello; sleep 3;done"]
+    command: ["/bin/bash"]
+    args: ["-c", "mkdir -p /opt/rucio/etc; cp /tmp/usercert.pem /opt/rucio/etc/usercert.pem; cp /tmp/userkey.pem /opt/rucio/etc/userkey.pem; cp /tmp/x509up /opt/rucio/etc/x509up; /opt/user/rucio_init.sh; while true; do echo hello; sleep 3;done"]
     env:
     - name: RUCIO_CFG_RUCIO_HOST
       value: http://server-rucio-server

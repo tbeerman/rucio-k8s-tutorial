@@ -8,7 +8,7 @@
    restartPolicy: Never
    containers:
      - name: init
-       image: beermann/rucio-init:release-1.21.10
+       image: beermann/rucio-init:release-1.23.8
        imagePullPolicy: Always
        env:
          - name: RUCIO_CFG_DATABASE_DEFAULT
