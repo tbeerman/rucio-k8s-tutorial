@@ -23,7 +23,8 @@
 
 * Add Helm chart repositories:
 
-      helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+      helm repo add stable https://charts.helm.sh/stable
+      helm repo add bitnami https://charts.bitnami.com/bitnami
       helm repo add rucio https://rucio.github.io/helm-charts
 
 ## Some helpful commands
@@ -54,7 +55,7 @@
 
 * Install the main Rucio database (PostgreSQL):
 
-      helm install postgres stable/postgresql -f postgres_values.yaml
+      helm install postgres bitnami/postgresql -f postgres_values.yaml
 
 * Run init container once to setup the Rucio database once the PostgreSQL container is running:
 
