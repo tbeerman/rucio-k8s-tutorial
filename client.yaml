@@ -31,7 +31,7 @@ metadata:
 spec:
   containers:
   - name: client
-    image: rucio/rucio-clients:release-1.23.8_py3
+    image: rucio/rucio-clients:release-1.23.11_py3
     volumeMounts:
     - name: usercert
       mountPath: /tmp/usercert.pem
@@ -56,9 +56,9 @@ spec:
     - name: RUCIO_CFG_AUTH_TYPE
       value: userpass
     - name: RUCIO_CFG_USERNAME
-      value: ddmlab
+      value: tutorial
     - name: RUCIO_CFG_PASSWORD
-      value: secret
+      value: secret1R
     - name: RUCIO_CFG_ACCOUNT
       value: root
     - name: RUCIO_CFG_CLIENT_CERT

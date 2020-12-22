@@ -135,7 +135,7 @@ reaper:
   greedy: 1
 
 image:
-  tag: release-1.23.8_py3
+  tag: release-1.23.11_py3
   pullPolicy: Always
 
 ftsRenewal:

@@ -3,8 +3,8 @@ image:
   repository: bitnami/postgresql
   tag: 12
 
-#persistence:
-#  enabled: false
+persistence:
+  enabled: false
 
 postgresqlUsername: rucio
 
