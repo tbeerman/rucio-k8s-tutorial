@@ -71,7 +71,7 @@
 
 * Jump into the client container and check if the clients are working:
 
-      kubectl exec -it client /bin/bash
+      kubectl exec -it client -- /bin/bash
 
       rucio whoami
 
@@ -99,7 +99,7 @@
 
 * Jump into the client container
 
-      kubectl exec -it client /bin/bash
+      kubectl exec -it client -- /bin/bash
 
 * Create the RSEs
 
